@@ -1,5 +1,5 @@
 {
-  "buildCommand": "CI=false yarn build",
+  "buildCommand": "CI=false npx react-scripts build",
   "outputDirectory": "build",
   "framework": "create-react-app"
 }
