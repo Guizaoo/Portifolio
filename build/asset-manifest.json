@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.dee56f68.css",
+    "main.js": "/static/js/main.0e6b875f.js",
+    "static/js/453.6264690d.chunk.js": "/static/js/453.6264690d.chunk.js",
+    "static/media/Fotogui.jpg": "/static/media/Fotogui.a6aa8cdcd6eeacca9f61.jpg",
+    "index.html": "/index.html",
+    "main.dee56f68.css.map": "/static/css/main.dee56f68.css.map",
+    "main.0e6b875f.js.map": "/static/js/main.0e6b875f.js.map",
+    "453.6264690d.chunk.js.map": "/static/js/453.6264690d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dee56f68.css",
+    "static/js/main.0e6b875f.js"
+  ]
+}
