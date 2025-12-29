@@ -1,18 +1,32 @@
-import React from "react";
+import { Routes, Route } from "react-router-dom";
+
 import Header from "./components/Header";
 import About from "./components/About";
-import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import Skills from "./components/Skills";
 import Footer from "./components/Footer";
-import "./App.css";
+import ProjetosVideos from "./Pages/ProjetosVideos";
 
 function App() {
   return (
     <>
       <Header />
-      <About />
-      <Skills />
-      <Projects />
+
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <About />
+              <Skills />
+              <Projects />
+            </>
+          }
+        />
+
+        <Route path="/videos" element={<ProjetosVideos />} />
+      </Routes>
+
       <Footer />
     </>
   );

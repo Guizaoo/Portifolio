@@ -49,7 +49,7 @@ export default function Skills() {
           </div>
           <div className="skill-card" data-tooltip="Spring Boot">
             <i className="fas fa-leaf"></i>
-            <span>Spring</span>
+            <span>Tailwind</span>
           </div>
           <div className="skill-card" data-tooltip="JavaScript">
             <i className="fab fa-js"></i>

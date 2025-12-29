@@ -9,7 +9,7 @@ export default function About() {
         <p>
           Olá! Sou o <strong>Guilherme Dias</strong>, um desenvolvedor Full
           Stack apaixonado por criar soluções eficientes e inovadoras. Minha
-          jornada na programação começou em 2022, e desde então tenho focado em
+          jornada na programação começou em 2024, e desde então tenho focado em
           me aprimorar em tecnologias robustas como{" "}
           <strong>Java com Spring Boot</strong> para o back-end, e{" "}
           <strong>React</strong> e <strong>JavaScript</strong> para o front-end.

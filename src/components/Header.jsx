@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../App.css";
 import Fotogui from "../assets/Fotogui.jpg";
 
@@ -35,15 +36,20 @@ export default function Header() {
             {darkMode ? "☀️" : "🌙"}
           </button>
 
+          {/* Âncoras internas */}
           <a href="#about">Sobre</a>
           <a href="#skills">Habilidades</a>
           <a href="#projects">Projetos</a>
+
+          {/* Navegação de página */}
+          <Link to="/videos">Projetos em Vídeo</Link>
         </nav>
 
         <div className="profile">
           <img src={Fotogui} alt="Guilherme Dias" className="profile-img" />
           <h1>Guilherme Dias</h1>
-          <p>Desenvolvedor Full Stack | 22 anos | Programando desde 2022</p>
+          <p>Desenvolvedor Full Stack | 22 anos | Programando desde 2024</p>
+
           <div className="social-links">
             <a
               href="https://www.linkedin.com/in/guilherme-dias-0ba202230/"
