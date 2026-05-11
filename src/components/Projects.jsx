@@ -1,5 +1,4 @@
 import React from "react";
-import "../App.css";
 
 export default function Projects() {
   const projects = [
@@ -29,30 +28,49 @@ export default function Projects() {
     },
   ];
 
- return (
-    <section id="projects" className="projects-section">
-      <div className="container">
-        <h2>Projetos Recentes</h2>
-        <div className="projects-grid">
+  return (
+    <section id="projects" className="bg-slate-50 py-16 dark:bg-zinc-950">
+      <div className="mx-auto w-full max-w-6xl px-5">
+        <h2 className="mx-auto mb-10 w-fit border-b-2 border-blue-700 pb-2 text-center text-3xl font-bold text-blue-700 dark:border-blue-300 dark:text-blue-300">
+          Projetos Recentes
+        </h2>
+        <div className="grid gap-6 lg:grid-cols-3">
           {projects.map((project, index) => (
             <a
               key={index}
               href={project.link}
-              className="project-card"
+              className="group overflow-hidden rounded-lg border border-slate-200 border-l-blue-700 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-zinc-800 dark:border-l-blue-400 dark:bg-zinc-900"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={project.image} alt={project.title} />
-              <div className="project-info">
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <div className="project-tags">
-                  {project.tags.map((tag, i) => (
-                    <span key={i}>{tag}</span>
-                  ))}
+              <div className="flex h-full flex-col sm:flex-row lg:flex-col">
+                <div className="flex items-center justify-center bg-slate-100 p-6 dark:bg-zinc-950">
+                  <img
+                    className="h-24 w-24 object-contain transition duration-300 group-hover:scale-105"
+                    src={project.image}
+                    alt={project.title}
+                  />
                 </div>
-                <div className="project-link">
-                  <i className="fab fa-linkedin"></i> Ver Projeto
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-zinc-100">
+                    {project.title}
+                  </h3>
+                  <p className="mt-3 flex-1 text-sm leading-6 text-slate-600 dark:text-zinc-300">
+                    {project.description}
+                  </p>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                  {project.tags.map((tag, i) => (
+                    <span
+                      key={i}
+                      className="rounded border border-slate-300 bg-slate-50 px-2 py-1 text-xs font-medium text-slate-600 dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-300"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                  </div>
+                  <div className="mt-5 text-sm font-bold text-blue-700 dark:text-blue-300">
+                    Ver Projeto
+                  </div>
                 </div>
               </div>
             </a>

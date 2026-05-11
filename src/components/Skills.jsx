@@ -1,68 +1,35 @@
-import React, { useEffect } from "react";
-import "../App.css";
+import React from "react";
 
 export default function Skills() {
-  useEffect(() => {
-    const skillCards = document.querySelectorAll(".skill-card");
-
-    const handleScroll = () => {
-      const skillsSection = document.querySelector(".skills-section");
-      if (!skillsSection) return;
-
-      const sectionPosition = skillsSection.getBoundingClientRect().top;
-      const screenPosition = window.innerHeight / 1.3;
-
-      if (sectionPosition < screenPosition) {
-        skillCards.forEach((card, index) => {
-          setTimeout(() => {
-            card.style.opacity = "1";
-            card.style.transform = "translateY(0)";
-          }, index * 100);
-        });
-        window.removeEventListener("scroll", handleScroll);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    skillCards.forEach((card) => {
-      card.style.opacity = "0";
-      card.style.transform = "translateY(20px)";
-      card.style.transition = "all 0.5s ease";
-    });
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const skills = [
+    { name: "React", accent: "text-cyan-500", initials: "Re" },
+    { name: "Java", accent: "text-orange-500", initials: "Ja" },
+    { name: "Spring Boot", accent: "text-emerald-500", initials: "Sp" },
+    { name: "Tailwind", accent: "text-sky-500", initials: "Tw" },
+    { name: "JavaScript", accent: "text-yellow-500", initials: "JS" },
+    { name: "HTML5", accent: "text-red-500", initials: "H5" },
+  ];
 
   return (
-    <section id="skills" className="skills-section">
-      <div className="container">
-        <h2>Minhas Habilidades</h2>
-        <div className="skills-grid">
-          <div className="skill-card" data-tooltip="React">
-            <i className="fab fa-react"></i>
-            <span>React</span>
-          </div>
-          <div className="skill-card" data-tooltip="Java">
-            <i className="fab fa-java"></i>
-            <span>Java</span>
-          </div>
-          <div className="skill-card" data-tooltip="Spring Boot">
-            <i className="fas fa-leaf"></i>
-            <span>Tailwind</span>
-          </div>
-          <div className="skill-card" data-tooltip="JavaScript">
-            <i className="fab fa-js"></i>
-            <span>JavaScript</span>
-          </div>
-          <div className="skill-card" data-tooltip="CSS3">
-            <i className="fab fa-css3-alt"></i>
-            <span>CSS3</span>
-          </div>
-          <div className="skill-card" data-tooltip="HTML5">
-            <i className="fab fa-html5"></i>
-            <span>HTML5</span>
-          </div>
+    <section id="skills" className="bg-white py-16 dark:bg-zinc-900">
+      <div className="mx-auto w-full max-w-6xl px-5">
+        <h2 className="mx-auto mb-10 w-fit border-b-2 border-blue-700 pb-2 text-center text-3xl font-bold text-blue-700 dark:border-blue-300 dark:text-blue-300">
+          Minhas Habilidades
+        </h2>
+        <div className="grid grid-cols-2 justify-items-center gap-6 sm:grid-cols-3 lg:grid-cols-6">
+          {skills.map((skill) => (
+            <div
+              key={skill.name}
+              className="group flex h-32 w-32 flex-col items-center justify-center rounded-full border border-slate-200 bg-slate-50 text-center shadow-sm transition duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-xl dark:border-zinc-800 dark:bg-zinc-950"
+            >
+              <span className={`text-3xl font-black ${skill.accent}`}>
+                {skill.initials}
+              </span>
+              <span className="mt-2 text-sm font-semibold text-slate-800 dark:text-zinc-100">
+                {skill.name}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
