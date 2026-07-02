@@ -54,7 +54,7 @@ export default function ProjetosDestaque() {
             <Link
               key={projeto.titulo}
               to={projeto.caminho}
-              data-reveal="zoom"
+              data-reveal={indice === 1 ? "up" : "zoom"}
               style={{ "--reveal-delay": `${indice * 90}ms` }}
             >
               <article className="flex h-full flex-col rounded-lg border border-zinc-800 bg-zinc-900 p-6 shadow-xl shadow-black/20 transition hover:-translate-y-1 hover:border-blue-500">

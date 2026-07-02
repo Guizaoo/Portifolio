@@ -54,12 +54,12 @@ export default function Cabecalho() {
         <section className="mx-auto grid w-full max-w-6xl gap-10 px-5 pb-16 pt-8 lg:grid-cols-[1.12fr_0.88fr] lg:items-center lg:pb-20 lg:pt-12">
           <div data-reveal="left">
             <h1 className="max-w-3xl text-4xl font-black leading-tight text-slate-950 dark:text-white sm:text-5xl lg:text-6xl">
-              Construo aplicações web claras, rápidas e prontas para virar produto.
+              Desenvolvo sites, sistemas e aplicações web pensadas para resolver problemas reais.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-zinc-300">
-              Sou Guilherme Dias, tenho 23 anos e estudo desenvolvimento Full Stack com foco em Java,
-              Spring Boot, React e JavaScript. Este portfólio reúne minha evolução, meus projetos
-              atuais e o tipo de solução que quero entregar em trabalhos futuros.
+              Sou Guilherme Dias, desenvolvedor Full Stack em evolução, criando interfaces modernas
+              com React e sistemas com Java e Spring Boot. Este portfólio reúne projetos reais,
+              sistemas próprios e soluções que mostram minha forma de transformar ideias em produto.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -92,9 +92,11 @@ export default function Cabecalho() {
                 ["2024", "início na programação"],
                 ["Full Stack", "Java, Spring e React"],
                 ["10+", "projetos reais e autorais"],
-              ].map(([valor, descricao]) => (
+              ].map(([valor, descricao], indice) => (
                 <div
                   key={valor}
+                  data-reveal="flip"
+                  style={{ "--reveal-delay": `${220 + indice * 90}ms` }}
                   className="rounded-lg border border-slate-200 bg-slate-50 p-4 dark:border-zinc-800 dark:bg-zinc-900"
                 >
                   <strong className="block text-xl text-blue-700 dark:text-blue-300">{valor}</strong>

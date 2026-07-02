@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
   html {
@@ -22,43 +22,102 @@
 }
 
 [data-reveal] {
+  position: relative;
+  isolation: isolate;
   opacity: 0;
-  transform: translate3d(0, 28px, 0);
+  filter: blur(10px);
+  transform: translate3d(0, 34px, 0) scale(0.985);
   transition:
-    opacity 700ms ease,
-    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 760ms ease,
+    filter 760ms ease,
+    transform 860ms cubic-bezier(0.16, 1, 0.3, 1),
     border-color 200ms ease,
     background-color 200ms ease,
     color 200ms ease,
     box-shadow 200ms ease;
   transition-delay: var(--reveal-delay, 0ms);
+  transform-origin: center;
   will-change: opacity, transform;
 }
 
+[data-reveal]::before {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    radial-gradient(circle at 50% 55%, rgba(37, 99, 235, 0.09), transparent 68%),
+    radial-gradient(circle at 18% 20%, rgba(20, 184, 166, 0.045), transparent 48%);
+  filter: blur(22px);
+  transition: opacity 900ms ease;
+}
+
 [data-reveal="left"] {
-  transform: translate3d(-32px, 0, 0);
+  transform: translate3d(-42px, 0, 0) scale(0.985);
 }
 
 [data-reveal="right"] {
-  transform: translate3d(32px, 0, 0);
+  transform: translate3d(42px, 0, 0) scale(0.985);
+}
+
+[data-reveal="up"] {
+  transform: translate3d(0, 42px, 0) scale(0.985);
 }
 
 [data-reveal="zoom"] {
-  transform: scale(0.96);
+  transform: translate3d(0, 18px, 0) scale(0.94);
+}
+
+[data-reveal="flip"] {
+  transform: perspective(900px) rotateX(10deg) translate3d(0, 28px, 0);
+  transform-origin: top center;
 }
 
 [data-reveal].is-visible {
   opacity: 1;
+  filter: blur(0);
+}
+
+[data-reveal].is-visible::before {
+  opacity: 0.48;
+  animation: ambient-blue-glow 7s ease-in-out infinite;
+}
+
+[data-reveal].is-visible:hover::before {
+  opacity: 0.72;
 }
 
 [data-reveal].is-visible:not(:hover) {
   transform: none;
 }
 
+@keyframes ambient-blue-glow {
+  0% {
+    transform: scale(0.985);
+  }
+
+  50% {
+    transform: scale(1.015);
+  }
+
+  100% {
+    transform: scale(0.985);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   [data-reveal] {
     opacity: 1;
+    filter: none;
     transform: none;
+    transition: none;
+  }
+
+  [data-reveal]::before {
+    animation: none;
     transition: none;
   }
 }

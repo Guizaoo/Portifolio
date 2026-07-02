@@ -79,7 +79,7 @@ export default function Projetos() {
           <article
             key={projeto.id}
             id={projeto.id}
-            data-reveal
+            data-reveal={indice % 2 === 0 ? "left" : "right"}
             style={{ "--reveal-delay": `${Math.min(indice, 3) * 80}ms` }}
             className="grid gap-6 rounded-lg border border-zinc-800 bg-zinc-900 p-5 shadow-xl shadow-black/20 lg:grid-cols-[1fr_0.8fr] lg:p-7"
           >
