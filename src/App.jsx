@@ -1,18 +1,19 @@
 import { Routes, Route } from "react-router-dom";
 
-import Header from "./components/Header";
-import About from "./components/About";
-import Projects from "./components/Projects";
-import Skills from "./components/Skills";
-import Footer from "./components/Footer";
-import ProjectsPage from "./Pages/ProjectsPage";
+import Cabecalho from "./componentes/Cabecalho";
+import Sobre from "./componentes/Sobre";
+import ProjetosDestaque from "./componentes/ProjetosDestaque";
+import Habilidades from "./componentes/Habilidades";
+import Rodape from "./componentes/Rodape";
+import Projetos from "./paginas/Projetos";
+import AnimacoesRolagem from "./componentes/AnimacoesRolagem";
 
-function Home() {
+function Inicio() {
   return (
     <main>
-      <About />
-      <Skills />
-      <Projects />
+      <Sobre />
+      <Habilidades />
+      <ProjetosDestaque />
     </main>
   );
 }
@@ -20,12 +21,13 @@ function Home() {
 function App() {
   return (
     <>
-      <Header />
+      <AnimacoesRolagem />
+      <Cabecalho />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projetos" element={<ProjectsPage />} />
+        <Route path="/" element={<Inicio />} />
+        <Route path="/projetos" element={<Projetos />} />
       </Routes>
-      <Footer />
+      <Rodape />
     </>
   );
 }

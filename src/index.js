@@ -5,6 +5,8 @@ import "./App.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+document.documentElement.classList.add("dark");
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(

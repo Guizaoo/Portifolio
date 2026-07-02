@@ -20,3 +20,45 @@
     text-decoration: none;
   }
 }
+
+[data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition:
+    opacity 700ms ease,
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 200ms ease,
+    background-color 200ms ease,
+    color 200ms ease,
+    box-shadow 200ms ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-reveal="left"] {
+  transform: translate3d(-32px, 0, 0);
+}
+
+[data-reveal="right"] {
+  transform: translate3d(32px, 0, 0);
+}
+
+[data-reveal="zoom"] {
+  transform: scale(0.96);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+}
+
+[data-reveal].is-visible:not(:hover) {
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
