@@ -11,4 +11,12 @@
     @apply bg-slate-50 text-slate-900 antialiased transition-colors duration-300 dark:bg-zinc-950 dark:text-zinc-100;
     font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
+
+  ::selection {
+    @apply bg-blue-700 text-white;
+  }
+
+  a {
+    text-decoration: none;
+  }
 }
