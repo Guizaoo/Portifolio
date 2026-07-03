@@ -7,7 +7,7 @@ export default function Rodape() {
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-5 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="font-bold text-slate-950 dark:text-white">Guilherme Dias</p>
-          <p className="mt-1">Desenvolvedor Full Stack | Java, Spring Boot, React e JavaScript.</p>
+          <p className="mt-1">Desenvolvedor Full Stack</p>
         </div>
 
         <div className="flex flex-wrap gap-4 font-semibold">
