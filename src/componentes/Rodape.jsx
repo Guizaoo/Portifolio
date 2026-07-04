@@ -30,6 +30,14 @@ export default function Rodape() {
           >
             LinkedIn
           </a>
+          <a
+            className="hover:text-blue-700 dark:hover:text-blue-300"
+            href="https://wa.me/5598988831316?text=Ol%C3%A1%2C%20Guilherme!%20Gostaria%20de%20entrar%20em%20contato%20com%20voc%C3%AA."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Contato
+          </a>
         </div>
       </div>
     </footer>

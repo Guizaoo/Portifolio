@@ -118,7 +118,7 @@ export default function Projetos() {
                 </a>
               ) : (
                 <span className="mt-7 inline-flex rounded-lg border border-zinc-700 px-5 py-3 text-sm font-bold text-zinc-300">
-                  Aguardando link público
+                  
                 </span>
               )}
             </div>
