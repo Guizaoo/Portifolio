@@ -1,6 +1,9 @@
 import React from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import Fotogui from "../assets/Fotogui.jpg";
+import ASCIIText from "./ASCIIText";
+import Aurora from "./Aurora";
+import VariableProximity from "./VariableProximity";
 
 const itensNavegacao = [
   { texto: "Sobre", ancora: "/#about" },
@@ -8,17 +11,26 @@ const itensNavegacao = [
   { texto: "Projetos", rota: "/projetos" },
 ];
 
+const linhasTitulo = ["Construo", "aplicações web,", "rápidas e prontas", "para virar produto."];
+
 export default function Cabecalho() {
   const localizacao = useLocation();
   const estaNaPaginaInicial = localizacao.pathname === "/";
 
   return (
     <header className="relative overflow-hidden border-b border-slate-200 bg-white text-slate-950 dark:border-zinc-800 dark:bg-zinc-950 dark:text-white">
+      <Aurora
+        colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
+        blend={0.5}
+        amplitude={1}
+        speed={0.5}
+        className="hidden dark:block"
+      />
       <div className="absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,#2563eb,#14b8a6,#f59e0b)]" />
 
-      <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-5">
+      <nav className="relative z-10 mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-5">
         <Link to="/" className="text-base font-bold text-white transition hover:text-blue-300">
-          Guilherme Dias
+          <ASCIIText text="Guilherme Dias" asciiFontSize={13} />
         </Link>
 
         <div className="hidden items-center gap-2 rounded-full border border-slate-200 bg-slate-50 p-1 text-sm font-semibold text-slate-700 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-200 sm:flex">
@@ -51,11 +63,22 @@ export default function Cabecalho() {
       </nav>
 
       {estaNaPaginaInicial && (
-        <section className="mx-auto grid w-full max-w-6xl gap-10 px-5 pb-16 pt-8 lg:grid-cols-[1.12fr_0.88fr] lg:items-center lg:pb-20 lg:pt-12">
+        <section className="relative z-10 mx-auto grid w-full max-w-6xl gap-10 px-5 pb-16 pt-8 lg:grid-cols-[1.12fr_0.88fr] lg:items-center lg:pb-20 lg:pt-12">
           <div data-reveal="left">
-            <h1 className="max-w-3xl text-4xl font-black leading-tight text-slate-950 dark:text-white sm:text-5xl lg:text-6xl">
-              Construo aplicações web, s rápidas e prontas para virar produto.
+            <h1 className="max-w-4xl text-4xl font-black leading-tight text-slate-950 dark:text-white sm:text-5xl lg:text-6xl">
+              {linhasTitulo.map((linha) => (
+                <span key={linha} className="block">
+                  <VariableProximity
+                    label={linha}
+                    radius={120}
+                    falloff="gaussian"
+                    fromFontVariationSettings="'wght' 780, 'opsz' 12"
+                    toFontVariationSettings="'wght' 1000, 'opsz' 40"
+                  />
+                </span>
+              ))}
             </h1>
+
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-zinc-300">
               Sou Guilherme Dias, tenho 23 anos e estudo desenvolvimento Full Stack com foco em Java,
               Spring Boot, React e JavaScript. Este portfólio reúne minha evolução, meus projetos
