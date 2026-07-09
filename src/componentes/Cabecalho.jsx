@@ -30,7 +30,7 @@ export default function Cabecalho() {
 
       <nav className="relative z-10 mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-5">
         <Link to="/" className="text-base font-bold text-white transition hover:text-blue-300">
-          <ASCIIText text="Guilherme Dias" asciiFontSize={13} />
+          <ASCIIText text="Guilherme Dias" asciiFontSize={15} />
         </Link>
 
         <div className="hidden items-center gap-2 rounded-full border border-slate-200 bg-slate-50 p-1 text-sm font-semibold text-slate-700 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-200 sm:flex">
@@ -131,7 +131,7 @@ export default function Cabecalho() {
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-md" data-reveal="right">
+          <div className="relative mx-auto w-full max-w-sm" data-reveal="right">
             <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-2xl shadow-slate-200/70 dark:border-zinc-800 dark:bg-zinc-900 dark:shadow-black/30">
               <img
                 src={Fotogui}
